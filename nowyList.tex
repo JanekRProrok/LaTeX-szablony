@@ -1,0 +1,150 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREAMBUŁA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                         W tej części dokumentu określa się jego rodzaj i styl,                                        %
+%                                         dołącza pakiety rozszerzające możliwości LaTeXa, etc.                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,oneside,notitlepage,a4paper]{mwart}
+	% 11pt - Wybór rozmiaru czcionki dla podstawowej wielkości pisma (domyślnie - 10pt)
+	% oneside/twoside - Druk jednostronny/dwustronny z wyrównywaniem wysokości sąsiadujących stron.
+	% titlepage/notitlepage - Złożenie tytułu (instrukcja \maketitle) i streszczenia (instrukcja \begin{abstract}) na osobnej stronie/brak stronyn tytułowej.
+	% a4paper - Wybór rozmiaru papieru.
+	% wide - Zmiejszenie rozmiaru marginesów. Jej użycie może utrudniać czytanie - w jednym wierszu nie powinno być więcej niż 70 znaków, ale może być przydatna w przypadku składu dwułamowego.
+	% onecolumn/twocolumn - skład jedno- lub dwułamowy (kolumnowy)
+	%
+	% mwart - Zdefiniowanie klasy dokumentu. Standardowe: article, book, report (dłuższe wypracowania, prace magisterskie), letter i beamer (prezentacje).
+	% Dla polskich użytkowników sa dostępne klasy uwzględniające polskie standardy typograficzne: mwart, mwbk i mwrep.
+	
+\usepackage[utf8]{inputenc} % Pakiet (niewymagany po 2018 roku) definiujący układ znaków w pliku źródłowym, pozwala kodować znaki diakrytyczne.
+	% https://ctan.org/pkg/inputenc
+\usepackage{polski} % Pakiet dodający język polski.
+	% https://ctan.org/pkg/polski
+
+\usepackage{enumitem} % Pakiet umożliwiający większą kontrolę nad środowiskami enumerate, itemize i description.
+	\setlist{nolistsep} % W żadnych środowiskach enumerate/itemize/description nie chcemy mieć odstępów pionowych.
+	\setlist[itemize]{label=$\bullet$} % Ustawienie kropki jako punktatora listy {itemize}.
+	% https://ctan.org/pkg/enumitem
+
+\usepackage{graphicx} % Pakiet oferujący dodatkowe możliwości przy dodawaniu grafik.
+	% https://ctan.org/pkg/graphicx
+
+\usepackage{setspace} % Pakiet zapewniający dodatkowe ustawienia odstępów między liniami w dokumencie.
+	% https://ctan.org/pkg/setspace
+		\onehalfspacing	% Ustawienie pojedynczego odstępu między linijkami.
+		\setlength{\parindent}{20 pt} % Rozmiar wcięcia akapitów.
+
+% \usepackage{lettrine} % Pakiet umożliwiający tworzenie inicjałów na początku akapitów.
+	% \def\cslow{\raisebox{-\baselineskip}{,,}} % Zdefiniowanie cudzysłowu dla początku akapitu z inicjałem.
+		% \lettrine[lines=1]{L}{orem} ipsum dolor sit amet.
+		% \lettrine[ante=\cslow]{L}{orem} ipsum
+		% \lettrine{L}{}orem ipsum
+	% https://ctan.org/pkg/lettrine
+
+% \usepackage{longtable} % Pakiet ułatwiający tworzenie długich tabel przechodzących na kolejne strony.
+	% https://www.ctan.org/pkg/longtable
+
+% \usepackage{array} % Pakiet rozszerzający możliwości formatowania środowisk tablicowych i tabelarycznych.
+	% https://www.ctan.org/pkg/array
+	
+% \usepackage{lscape} % Pakiet pozwalający obrócić zawartość strony, pozostawiając jej numer nienaurszonym. Przydatne np. przy szerokich tabelach
+		% \begin{landscape} ... \end{landscape}
+	% https://www.ctan.org/pkg/lscape
+	
+\usepackage{pdfpages} % Pakiet pozwalający na włączanie do pliku innych dokumentów w formacie PDF.
+		% \includepdf[opcjonalne ustawienia, np. strony]{ścieżka do pliku}
+	% https://www.ctan.org/pkg/pdfpages
+
+\usepackage{xcolor} % Pakiet pozwalający m.in. mieszać podstawowe kolory i tworzyć własne.
+	\definecolor{orangelink}{rgb}{0.7,0.18,0.1} % Zdefiniowany własny kolor do linków.
+	% https://ctan.org/pkg/xcolor
+	
+\usepackage{hyperref} % Pakiet umożliwiający zmianę dodatkowych ustawień pliku PDF.
+
+	\hypersetup{ % Ustawienia pliku PDF.
+		% http://www.tug.org/applications/hyperref/manual.html#x1-120003.8
+		%
+		pdftitle={Nowy list}, % Tytuł dokumentu
+			pdfdisplaydoctitle=true, % Wyświetlaj lub nie wyświetlaj w nagłówku okna tytuł dokumentu zamiast tytułu pliku
+		pdfauthor={JanekR_Prorok}, % Autor dokumentu
+		pdfsubject={}, % Temat dokumentu
+		pdfcreator={Texmaker, MiKTeX}, % creator of the document
+		% pdfproducer={}, % producer of the document
+		% pdfinfo={}, % Alternative interface for setting the document information
+		% pdfkeywords={}, % Słowa kluczowe dokumentu  
+		bookmarks=true,	% Pokaż lub ukryj pasek zakładek w trakcie wyświetlania tego dokumentu Acrobatem
+		bookmarksnumbered=true, % Wyświetlaj lub nie wyświetlaj numerów rozdziałów w tytułach zakładek
+		bookmarksopen=true, % Otwórz rozwinięte lub zwinięte drzewko zakładek.
+			bookmarksopenlevel=1, % Wybierz do którego poziomu zakładek drzewko ma być rozwinięte.
+		pdfpagelabels=true, % set PDF page labels                   
+		pdfpagemode=UseOutlines, % Determines how the file is opening in Acrobat; the possibilities are UseNone,
+			% UseThumbs (show thumbnails), UseOutlines (show bookmarks), FullScreen, UseOC (PDF 1.5), and UseAttachments (PDF 1.6).
+			% If no mode if explicitly chosen, but the bookmarks option is set, UseOutlines is used.
+		unicode=true, % Pozwól w zakładkach Acrobata używać znaków z alfabetów niełacińskich
+		pdftoolbar=true, % Pokaż bądź ukryj pasek narzędziowy Acrobata
+		pdfmenubar=true, % Pokaż bądź ukryj menu Acrobata
+		pdffitwindow=false, % Dostosuj wielkość wyświetlanego PDFa dowielkości okna
+		pdfstartview=Fit, % fits the width of the page to the window
+		pdfnewwindow=true, % Czy w wypadku gdy łącze prowadzi poza dokument, ma być otwierane nowe okno
+		colorlinks=true, % Czy otoczyć hiperłącza kolorowymi ramkami (false) czy kolorować same hiperłącza (true)
+		linkcolor=orangelink, % Definicja koloru łączy wewnętrznych (rozdziałów, punktów, stron itp.)
+		citecolor=orangelink, % Definicja koloru cytowań, czyli odsyłaczy do bibliografii
+		filecolor=orangelink, % Definicja koloru odsyłaczy do plików
+		urlcolor=orangelink, % Definicja koloru łączy typu url
+		pdfpagelayout=OneColumn, % Ustawienie domyślnego wyświetlania stron PDFu
+			% Dostępne opcje (warto zwrócić uwagę na ustawienie stylu oneside/twoside i dobrać odpowiednią):
+				% SinglePage - Wyświetlaj pojedynczą stronę, przesuwanie przewraca stronę
+				% OneColumn - Wyświetlaj dokument jako ciągłą kolumnę
+				% TwoColumnLeft - Wyświetlaj dokument w dwóch ciągłych kolumnach, nieparzyste strony po lewej stronie.
+				% TwoColumnRight - Wyświetlaj dokument w dwóch ciągłych kolumnach, nieparzyste strony po prawej stronie.
+				% TwoPageLeft	- Wyświetlaj dwie strony, nieparzyste strony po lewej stronie (od PDF 1.5).
+				% TwoPageRight - Wyświetlaj dwie strony, nieparzyste strony po prawej stronie (od PDF 1.5).
+		% pdfstartpage=1, % Numer strony, na którym dokument ma się domyślnie otworzyć
+		% pdfnumcopies=, % Domyślna liczba drukowanych kopii
+		% filebordercolor=, % color of border around file links
+		% filecolor=, % color of file links
+		% linkbordercolor=, % color of border around links
+		% menubordercolor=, % color of border around menu links
+		% menucolor=, % color for menu links
+		% pagebackref=, % backreference by page number
+		% pdfcenterwindow=false, % position the document window in the center of the screen
+		% pdfdirection=, % direction setting   
+		% baseurl=, % Sets the base URL of the PDF document
+		% pdftrapped=, % Sets the document information Trapped entry. Possible values are True, False and Unknown. An empty value means, the entry is not set.
+	}
+	% https://ctan.org/pkg/hyperref	
+
+% \usepackage[printwatermark]{xwatermark} % Pakiet umożliwiający dodanie znaku wodnego.
+	% \newwatermark[allpages,angle=45,scale=3,xpos=0,ypos=0]{Wersja robocza}  % Dodanie znaku wodnego pod treścią.
+	% \newwatermark*[allpages,angle=45,scale=3,xpos=0,ypos=0]{Wersja robocza} % Dodanie znaku wodnego nad wszystkim.
+	% https://www.ctan.org/pkg/xwatermark
+
+% Wypełnienie ...... - \dotline{długość + 1 mm}.
+\def\dotfill#1{\cleaders\hbox to #1{.}\hfill}
+\newcommand\dotline[2][0,1cm]{\leavevmode\hbox to #2 {\dotfill{#1}\hfil}}	
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TREŚĆ DOKUMENTU %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+% \sloppy % - Wymuszenie nieprofesjonalnego trzymania się w marginesach jak w MS Word (kosztem dziwnie rozciągniętych odstępów - LaTeX uważa, że lepiej wyjątkowo wyjść ze zbyt długim wyrazem kawałek na margines niż umieszczać między wyrazami kilkucentymetrowe odstępy).
+
+\hfill Miejscowość, dn. \today
+\begin{center}
+		\noindent \huge{Apostrofa} % Apostrofa oraz podpis winny być napisane odręcznie!
+	\end{center} \bigskip
+	
+\noindent pierwszy akapit\smallskip
+
+Treść listu\ldots
+
+\bigskip \hfill 
+	\begin{minipage}{0.5\linewidth}
+		\centering Pozdrawiam,\\\smallskip
+ 		JanekR\underline{\hspace{1.2ex}}Prorok.
+ 	\end{minipage}
+\bigskip\bigskip\bigskip
+
+\texttt{P.S.} Ewentualne \emph{post scriptum}.
+\end{document}

@@ -1,0 +1,116 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREAMBUŁA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,oneside,notitlepage,a4paper]{mwart}
+	
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+
+\usepackage{enumitem}
+	\setlist{nolistsep}
+	\setlist[itemize]{label=$\bullet$}
+	% https://ctan.org/pkg/enumitem
+
+\usepackage{graphicx}
+	% https://ctan.org/pkg/graphicx
+
+\usepackage{setspace}
+		\onehalfspacing	
+		\setlength{\parindent}{20 pt}
+
+% \usepackage{lettrine} % Pakiet umożliwiający tworzenie inicjałów na początku akapitów.
+	% \def\cslow{\raisebox{-\baselineskip}{,,}} % Zdefiniowanie cudzysłowu dla początku akapitu z inicjałem.
+		% \lettrine[lines=1]{L}{orem} ipsum dolor sit amet.
+		% \lettrine[ante=\cslow]{L}{orem} ipsum
+		% \lettrine{L}{}orem ipsum
+	% https://ctan.org/pkg/lettrine
+
+% \usepackage{longtable} % Pakiet ułatwiający tworzenie długich tabel przechodzących na kolejne strony.
+	% https://www.ctan.org/pkg/longtable
+
+% \usepackage{array} % Pakiet rozszerzający możliwości formatowania środowisk tablicowych i tabelarycznych.
+	% https://www.ctan.org/pkg/array
+	
+% \usepackage{lscape} % Pakiet pozwalający obrócić zawartość strony, pozostawiając jej numer nienaurszonym. Przydatne np. przy szerokich tabelach
+		% \begin{landscape} ... \end{landscape}
+	% https://www.ctan.org/pkg/lscape
+	
+\usepackage{pdfpages}
+		% \includepdf[opcjonalne ustawienia, np. strony]{ścieżka do pliku}
+	% https://www.ctan.org/pkg/pdfpages
+
+\usepackage{xcolor}
+	\definecolor{orangelink}{rgb}{0.7,0.18,0.1} 
+	% https://ctan.org/pkg/xcolor
+	
+\usepackage{hyperref}
+
+	\hypersetup{ % Ustawienia pliku PDF
+		% http://www.tug.org/applications/hyperref/manual.html#x1-120003.8
+		%
+		pdftitle={Nowy list},
+			pdfdisplaydoctitle=true,
+		pdfauthor={JanekR_Prorok},
+		pdfsubject={},
+		pdfcreator={Texmaker, MiKTeX},
+		% pdfproducer={},
+		% pdfinfo={},
+		% pdfkeywords={},
+		bookmarks=true,
+		bookmarksnumbered=true,
+		bookmarksopen=true,
+			bookmarksopenlevel=1,
+		pdfpagelabels=true,           
+		pdfpagemode=UseOutlines,
+		unicode=true,
+		pdftoolbar=true,
+		pdfmenubar=true,
+		pdffitwindow=false,
+		pdfstartview=Fit,
+		pdfnewwindow=true,
+		colorlinks=true,
+		linkcolor=orangelink,
+		citecolor=orangelink,
+		filecolor=orangelink,
+		urlcolor=orangelink,
+		pdfpagelayout=OneColumn,
+		% pdfstartpage=1,
+		% pdfnumcopies=1,
+	}
+	% https://ctan.org/pkg/hyperref	
+
+% \usepackage[printwatermark]{xwatermark}
+	% \newwatermark[allpages,angle=45,scale=3,xpos=0,ypos=0]{Wersja robocza}  % Dodanie znaku wodnego pod treścią
+	% \newwatermark*[allpages,angle=45,scale=3,xpos=0,ypos=0]{Wersja robocza} % Dodanie znaku wodnego nad wszystkim
+	% https://www.ctan.org/pkg/xwatermark
+
+% Wypełnienie ...... - \dotline{długość + 1 mm}.
+\def\dotfill#1{\cleaders\hbox to #1{.}\hfill}
+\newcommand\dotline[2][0,1cm]{\leavevmode\hbox to #2 {\dotfill{#1}\hfil}}	
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TREŚĆ DOKUMENTU %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+% \sloppy
+
+\hfill Miejscowość, dn. \today
+\begin{center}
+		\noindent \huge{Apostrofa} % Apostrofa oraz podpis winny być napisane odręcznie!
+	\end{center} \bigskip
+	
+\noindent pierwszy akapit\smallskip
+
+Treść listu\ldots
+
+\bigskip \hfill 
+	\begin{minipage}{0.5\linewidth}
+		\centering Pozdrawiam,\\\smallskip
+ 		JanekR\underline{\hspace{1.2ex}}Prorok.
+ 	\end{minipage}
+\bigskip\bigskip\bigskip
+
+\texttt{P.S.} Ewentualne \emph{post scriptum}.
+\end{document}

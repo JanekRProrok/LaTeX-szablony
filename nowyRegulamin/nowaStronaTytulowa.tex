@@ -1,0 +1,80 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREAMBUŁA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,oneside,notitlepage,a4paper,wide]{mwart}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{polski}
+
+\usepackage{graphicx}
+\usepackage{soul}
+
+\usepackage{tikz}
+\usepackage{pgfornament}
+
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\parindent}{0pt}
+
+\usepackage[]{hyperref}
+\usepackage{xcolor}
+	\definecolor{orangelink}{rgb}{0.7,0.18,0.1}
+
+	\title{Strona tytułowa} 
+	\author{JanekR\underline{\hspace{1.2ex}}Prorok}
+	\date{\today}
+	
+\pagestyle{empty}
+
+	\hypersetup{
+		pdftitle={Strona tytułowa},
+			pdfdisplaydoctitle=true,
+		pdfauthor={JanekR_Prorok},
+		pdfcreator={Texmaker, MiKTeX},
+		bookmarks=false,
+		bookmarksnumbered=false,
+		bookmarksopen=false,                
+		pdfpagemode=UseOutlines,
+		unicode=true,
+		pdftoolbar=false,
+		pdfmenubar=false,
+		pdffitwindow=true,
+		pdfnewwindow=true,
+		colorlinks=true,
+		linkcolor=orangelink,
+		citecolor=orangelink,
+		filecolor=orangelink,
+		urlcolor=orangelink,
+		pdfpagelayout=OneColumn,
+	}
+
+\newcommand{\parno}{\rotatebox[origin=c]{90}{\textbf{\S}}}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TREŚĆ DOKUMENTU %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\sloppy \centering
+\vspace*{44mm}
+	\Large JanekR\underline{\hspace{1.2ex}}Prorok\\
+\vspace{2mm}
+	\Huge{\textbf{\so{Regulamin}\\
+		przykład nazwy}}
+	
+\vspace{2cm}
+	\parno\parno\parno\parno\parno\parno\parno\parno\parno\parno\parno\parno\Large\\
+\vspace{2cm}
+
+\makebox[0.37\textwidth][s]{\emph{Iuris præcepta sunt hæc:}}\\
+\makebox[0.37\textwidth][s]{\emph{honeste vivere, alterum non}}\\
+\makebox[0.37\textwidth][s]{\emph{lædere, suum cuique tribuere.}}
+
+\vspace{\fill}
+	\large 11 stycznia 2021
+	
+\vspace{2mm}
+	\normalsize Ostatnia zmiana: \today
+\end{document}

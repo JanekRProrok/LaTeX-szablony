@@ -1,0 +1,156 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREAMBUŁA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,oneside,notitlepage,a4paper,wide]{mwart}
+	
+\usepackage[utf8]{inputenc}
+	% https://ctan.org/pkg/inputenc
+\usepackage{polski}
+	% https://ctan.org/pkg/polski
+
+% \usepackage{xparse} % Pakiet oferujący dodatkowe możliwości przy tworzeniu nowych, własnych poleceń.
+	% Jego dodanie może spowodować wystąpienie błędów w obecnie działających poleceniach!
+	% https://www.ctan.org/pkg/xparse
+
+\usepackage{enumitem}
+	\setlist{nolistsep}
+	\setlist[itemize]{label=$\bullet$}
+	% https://ctan.org/pkg/enumitem
+	
+% \usepackage{makeidx} % Pakiet umożliwiający tworzenie skorowidzów.
+	% https://ctan.org/pkg/makeidx
+
+\usepackage{graphicx} % Pakiet oferujący dodatkowe możliwości przy dodawaniu grafik.
+	% https://ctan.org/pkg/graphicx
+
+\usepackage{setspace}
+	% https://ctan.org/pkg/setspace
+		\onehalfspacing
+		\setlength{\parindent}{20 pt}
+
+% \usepackage{lettrine} % Pakiet umożliwiający tworzenie inicjałów na początku akapitów.
+	% \def\cslow{\raisebox{-\baselineskip}{,,}} % Zdefiniowanie cudzysłowu dla początku akapitu z inicjałem.
+		% \lettrine[lines=1]{L}{orem} ipsum dolor sit amet.
+		% \lettrine[ante=\cslow]{L}{orem} ipsum
+		% \lettrine{L}{}orem ipsum
+	% https://ctan.org/pkg/lettrine
+
+% \usepackage{fancyhdr} % Pakiet dający większą kontrolę nad wyglądem i użyciem nagłówka i stopki.
+	% https://www.ctan.org/pkg/fancyhdr
+
+% \usepackage{longtable} % Pakiet ułatwiający tworzenie długich tabel przechodzących na kolejne strony.
+	% https://www.ctan.org/pkg/longtable
+
+% \usepackage{array} % Pakiet rozszerzający możliwości formatowania środowisk tablicowych i tabelarycznych.
+	% https://www.ctan.org/pkg/array
+
+% \usepackage{mathtools} % lub \usepackage{amsmath} % Pakiet umożliwiający w tekście ciągłym umieszczać duże, piętrowe symbole matematyczne oraz zawierający środowiska ułatwiające pisanie wielolinijkowych wzorów.
+	% https://www.ctan.org/pkg/mathtools
+	% https://www.ctan.org/pkg/amsmath
+
+% \usepackage{tikz} % Pakiet dodający narzędzia do tworzenia grafiki w LaTeXu.
+	% https://www.ctan.org/pkg/pgf
+
+% \usepackage{siunitx} % Pakiet przydatny przy tworzeniu równań z wieloma jednostkami.
+	% https://www.ctan.org/pkg/siunitx
+
+% \usepackage{listings} % Pakiet pozwalający formatować kody programów w dokumencie.
+	% https://ctan.org/pkg/listings
+	
+% \usepackage{lscape} % Pakiet pozwalający obrócić zawartość strony, pozostawiając jej numer nienaurszonym. Przydatne np. przy szerokich tabelach
+		% \begin{landscape} ... \end{landscape}
+	% https://www.ctan.org/pkg/lscape
+	
+\usepackage{pdfpages}
+		% \includepdf[opcjonalne ustawienia, np. strony]{ścieżka do pliku}
+	% https://www.ctan.org/pkg/pdfpages
+
+\usepackage{titling} % Pakiet zapewniający większą kontrolę nad poleceniem \maketitle i \thanks oraz pozwalający się odwoływać do \title i \author w treści pracy.
+	\setlength{\droptitle}{-2.5cm} % Jeżeli podaje się tylko tytuł, bez zastosowania strony tytułowej, warto go nieco podnieść.
+	% https://www.ctan.org/pkg/titling
+
+\usepackage{xcolor}
+	\definecolor{orangelink}{rgb}{0.7,0.18,0.1} % Zdefiniowany własny kolor do linków.
+	% https://ctan.org/pkg/xcolor
+	
+\usepackage{hyperref}
+	\title{Przykładowy dokument w \LaTeX-u} 
+	\author{JanekR\underline{\hspace{1.2ex}}Prorok}
+	\date{\today}
+
+	\hypersetup{
+		% http://www.tug.org/applications/hyperref/manual.html#x1-120003.8
+		%
+		pdftitle={Tytuł dokumentu wyświetlany w Acrobacie},
+			pdfdisplaydoctitle=true,
+		pdfauthor={JanekR_Prorok},
+		pdfsubject={},
+		pdfcreator={Texmaker, MiKTeX},
+		% pdfproducer={},
+		% pdfinfo={},
+		% pdfkeywords={},
+		bookmarks=true,
+		bookmarksnumbered=true,
+		bookmarksopen=true,
+			bookmarksopenlevel=1,
+		pdfpagelabels=true,                
+		pdfpagemode=UseOutlines,
+		unicode=true,
+		pdftoolbar=true,
+		pdfmenubar=true,
+		pdffitwindow=false,
+		pdfstartview=Fit,
+		pdfnewwindow=true,
+		colorlinks=true,
+		linkcolor=orangelink,
+		citecolor=orangelink,
+		filecolor=orangelink,
+		urlcolor=orangelink,
+		pdfpagelayout=OneColumn,
+			% Dostępne opcje (por. oneside/twoside): SinglePage, OneColumn, TwoColumnLeft, TwoColumnRight, TwoPageLeft, TwoPageRight.
+		% pdfstartpage=1,
+		% pdfnumcopies=1,
+		% filebordercolor=,
+		% filecolor=,
+		% linkbordercolor=,
+		% menubordercolor=,
+		% menucolor=,
+		% pagebackref=,
+		% pdfcenterwindow=false,
+		% pdfdirection=,   
+		% baseurl=,
+		% pdftrapped=,
+	}
+	% https://ctan.org/pkg/hyperref	
+
+% \usepackage[printwatermark]{xwatermark}
+	% \newwatermark[allpages,angle=45,scale=3,xpos=0,ypos=0]{Wersja robocza}  % Dodanie znaku wodnego pod treścią.
+	% \newwatermark*[allpages,angle=45,scale=3,xpos=0,ypos=0]{Wersja robocza} % Dodanie znaku wodnego nad wszystkim.
+	% https://www.ctan.org/pkg/xwatermark
+	
+	
+% Inne przydatne, bardziej specjalistyczne pakiety:
+	% musixtex - Pakiet umożliwiający zapis nutowy w dokumentach LaTeX.
+		% https://ctan.org/pkg/musixtex
+	% gregoriotex - Pakiet umożliwiający zapis Chorału Gregoriańskiego w dokumentach LaTeX.
+		% http://gregorio-project.github.io/
+	% coffee - Pakiet umożliwiający dodanie plam po kawie, ciekawe na 1. kwietnia.
+		% http://www.hanno-rein.de/archives/349
+
+% Wypełnienie ...... - \dotline{długość + 1 mm}.
+\def\dotfill#1{\cleaders\hbox to #1{.}\hfill}
+\newcommand\dotline[2][0,1cm]{\leavevmode\hbox to #2 {\dotfill{#1}\hfil}}	
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TREŚĆ DOKUMENTU %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+% \sloppy
+\maketitle
+\section{Rozdział pierwszy}
+	Szczegółowe zasady działania systemu składu tekstu \LaTeX znajdziesz w dokumentach, w folderze \emph{Pomoce naukowe}.
+
+\newpage \tableofcontents
+\end{document}

@@ -1,0 +1,351 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREAMBUŁA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                         W tej części dokumentu określa się jego rodzaj i styl,                                        %
+%                                         dołącza pakiety rozszerzające możliwości LaTeXa, etc.                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,oneside,notitlepage,a4paper,wide]{mwart}
+	% 11pt - Wybór rozmiaru czcionki dla podstawowej wielkości pisma (domyślnie - 10pt)
+	% oneside/twoside - Druk jednostronny/dwustronny z wyrównywaniem wysokości sąsiadujących stron.
+	% titlepage/notitlepage - Złożenie tytułu (instrukcja \maketitle) i streszczenia (instrukcja \begin{abstract}) na osobnej stronie/brak stronyn tytułowej.
+	% a4paper - Wybór rozmiaru papieru.
+	% wide - Zmiejszenie rozmiaru marginesów. Jej użycie może utrudniać czytanie - w jednym wierszu nie powinno być więcej niż 70 znaków, ale może być przydatna w przypadku składu dwułamowego.
+	% onecolumn/twocolumn - skład jedno- lub dwułamowy (kolumnowy)
+	%
+	% mwart - Zdefiniowanie klasy dokumentu. Standardowe: article, book, report (dłuższe wypracowania, prace magisterskie), letter i beamer (prezentacje).
+	% Dla polskich użytkowników sa dostępne klasy uwzględniające polskie standardy typograficzne: mwart, mwbk i mwrep.
+	
+\usepackage[utf8]{inputenc} % Pakiet (niewymagany po 2018 roku) definiujący układ znaków w pliku źródłowym, pozwala kodować znaki diakrytyczne
+	% https://ctan.org/pkg/inputenc
+\usepackage{polski} % Pakiet dodający język polski
+	% https://ctan.org/pkg/polski
+
+\usepackage{bbding}
+	% https://www.ctan.org/pkg/bbding
+
+\usepackage{enumitem} % Pakiet umożliwiający większą kontrolę nad środowiskami enumerate, itemize i description
+	\setlist{nolistsep} % W żadnych środowiskach enumerate/itemize/description nie chcemy mieć odstępów pionowych.
+	\setlist[itemize]{label=$\bullet$} % Ustawienie kropki jako punktatora listy {itemize}.
+	\setlist[enumerate,1]{left=2\parindent, label=\alph*), ref=\alph*}
+	% https://ctan.org/pkg/enumitem
+
+% \usepackage{makeidx} % Pakiet umożliwiający tworzenie skorowidzów
+	% https://ctan.org/pkg/makeidx
+
+\usepackage{graphicx} % Pakiet oferujący dodatkowe możliwości przy dodawaniu grafik
+	% https://ctan.org/pkg/graphicx
+
+\usepackage{setspace} % Pakiet zapewniający dodatkowe ustawienia odstępów między liniami w dokumencie
+	% https://ctan.org/pkg/setspace
+		\onehalfspacing	% Ustawienie pojedynczego odstępu między linijkami.
+		\setlength{\parindent}{20pt} % Rozmiar wcięcia akapitów.
+
+% \usepackage{longtable} % Pakiet ułatwiający tworzenie długich tabel przechodzących na kolejne strony
+% https://www.ctan.org/pkg/longtable
+
+\usepackage{lscape} % Pakiet pozwalający obrócić zawartość strony, pozostawiając jej numer nienaurszonym. Przydatne np. przy szerokich tabelach
+		% \begin{landscape} ... \end{landscape}
+	% https://www.ctan.org/pkg/lscape
+
+
+
+\usepackage{pdfpages} % Pakiet pozwalający na włączanie do pliku innych dokumentów w formacie PDF
+		% \includepdf[opcjonalne ustawienia, np. strony]{ścieżka do pliku}
+	% https://www.ctan.org/pkg/pdfpages
+
+\usepackage{xcolor} % Pakiet pozwalający m.in. mieszać podstawowe kolory i tworzyć własne
+	\definecolor{orangelink}{rgb}{0.7,0.18,0.1} % Zdefiniowany własny kolor do linków.
+	% https://ctan.org/pkg/xcolor
+
+\usepackage{hyperref} % Pakiet umożliwiający zmianę dodatkowych ustawień pliku PDF
+	\title{Regulamin} 
+	\author{JanekR\underline{\hspace{1.2ex}}Prorok}
+	\date{\today}
+
+\hypersetup{ % Ustawienia pliku PDF
+	% http://www.tug.org/applications/hyperref/manual.html#x1-120003.8
+	%
+	pdftitle={Regulamin},
+		pdfdisplaydoctitle=true,
+		pdfauthor={JanekR_Prorok}, % Autor dokumentu
+		pdfsubject={}, % Temat dokumentu
+		pdfcreator={Texmaker, MiKTeX}, % creator of the document
+		% pdfproducer={}, % producer of the document
+		% pdfinfo={}, % Alternative interface for setting the document information
+		% pdfkeywords={}, % Słowa kluczowe dokumentu  
+		bookmarks=true,	% Pokaż lub ukryj pasek zakładek w trakcie wyświetlania tego dokumentu Acrobatem
+		bookmarksnumbered=true, % Wyświetlaj lub nie wyświetlaj numerów rozdziałów w tytułach zakładek
+		bookmarksopen=true, % Otwórz rozwinięte lub zwinięte drzewko zakładek.
+			bookmarksopenlevel=1, % Wybierz do którego poziomu zakładek drzewko ma być rozwinięte.
+		pdfpagelabels=true, % set PDF page labels                   
+		pdfpagemode=UseOutlines, % Determines how the file is opening in Acrobat; the possibilities are UseNone,
+			% UseThumbs (show thumbnails), UseOutlines (show bookmarks), FullScreen, UseOC (PDF 1.5), and UseAttachments (PDF 1.6).
+			% If no mode if explicitly chosen, but the bookmarks option is set, UseOutlines is used.
+		unicode=true, % Pozwól w zakładkach Acrobata używać znaków z alfabetów niełacińskich
+		pdftoolbar=true, % Pokaż bądź ukryj pasek narzędziowy Acrobata
+		pdfmenubar=true, % Pokaż bądź ukryj menu Acrobata
+		pdffitwindow=false, % Dostosuj wielkość wyświetlanego PDFa dowielkości okna
+		pdfstartview=Fit, % fits the width of the page to the window
+		pdfnewwindow=true, % Czy w wypadku gdy łącze prowadzi poza dokument, ma być otwierane nowe okno
+		colorlinks=true, % Czy otoczyć hiperłącza kolorowymi ramkami (false) czy kolorować same hiperłącza (true)
+		linkcolor=orangelink, % Definicja koloru łączy wewnętrznych (rozdziałów, punktów, stron itp.)
+		citecolor=orangelink, % Definicja koloru cytowań, czyli odsyłaczy do bibliografii
+		filecolor=orangelink, % Definicja koloru odsyłaczy do plików
+		urlcolor=orangelink, % Definicja koloru łączy typu url
+		pdfpagelayout=OneColumn, % Ustawienie domyślnego wyświetlania stron PDFu
+			% Dostępne opcje (warto zwrócić uwagę na ustawienie stylu oneside/twoside i dobrać odpowiednią):
+				% SinglePage - Wyświetlaj pojedynczą stronę, przesuwanie przewraca stronę
+				% OneColumn - Wyświetlaj dokument jako ciągłą kolumnę
+				% TwoColumnLeft - Wyświetlaj dokument w dwóch ciągłych kolumnach, nieparzyste strony po lewej stronie.
+				% TwoColumnRight - Wyświetlaj dokument w dwóch ciągłych kolumnach, nieparzyste strony po prawej stronie.
+				% TwoPageLeft	- Wyświetlaj dwie strony, nieparzyste strony po lewej stronie (od PDF 1.5).
+				% TwoPageRight - Wyświetlaj dwie strony, nieparzyste strony po prawej stronie (od PDF 1.5).
+		% pdfstartpage=1, % Numer strony, na którym dokument ma się domyślnie otworzyć
+		% pdfnumcopies=1, % Domyślna liczba drukowanych kopii
+		% filebordercolor=, % color of border around file links
+		% filecolor=, % color of file links
+		% linkbordercolor=, % color of border around links
+		% menubordercolor=, % color of border around menu links
+		% menucolor=, % color for menu links
+		% pagebackref=, % backreference by page number
+		% pdfcenterwindow=false, % position the document window in the center of the screen
+		% pdfdirection=, % direction setting   
+		% baseurl=, % Sets the base URL of the PDF document
+		% pdftrapped=, % Sets the document information Trapped entry. Possible values are True, False and Unknown. An empty value means, the entry is not set.
+	}
+	% https://ctan.org/pkg/hyperref	
+	
+%\usepackage[printwatermark]{xwatermark}
+	% \newwatermark[allpages,angle=45,scale=3,xpos=0,ypos=0]{Wersja robocza}  % Dodanie znaku wodnego pod treścią
+	% \newwatermark*[allpages,angle=45,scale=3,xpos=0,ypos=0]{Wersja robocza} % Dodanie znaku wodnego nad wszystkim
+
+% Wypełnienie ...... - \dotline{długość + 0,1 cm}.
+\def\dotfill#1{\cleaders\hbox to #1{.}\hfill}
+\newcommand\dotline[2][0,1cm]{\leavevmode\hbox to #2 {\dotfill{#1}\hfil}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Rozdziały %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Teraz będzie maszyneria do rozdziałów. Jest ona dość trikowa, ponieważ nie chcę, by każdy rozdział zaczynał się od nowej strony,
+% ale z kolei rozdział z tytułem na samym dole strony i początkiem na górze następnej jest niedopuszczalny. Ponieważ standardowo LaTeX
+% wyrównuje dolny margines, standardowe metody (\nopagebreak) mogą mieć problem, bowiem odstępy pionowe są zwykle znacznie mniej
+% ,,elastyczne'' niż poziome. (Uwaga! Używanie ,,elastycznych'' odstępów pionowych, standardowe w TeXu, generalnie nie jest
+% najlepszym pomysłem. Lepiej jest, gdy wiersze na wszystkich stronach są na tej samej wysokości. Oczywiście, wówczas wysokość
+% tytulariów, wzorów itp. (wraz z odstępami) musi być całkowitą wielokrotnością wysokości wiersza. (Nazywa się to po polsku
+% registrem, a po angielsku grid.) LaTeX standardowo nie ułatwia składu z registrem. Ma się to zmienić w LaTeXu 3, ale kiedy on
+% będzie dostępny, nie wiadomo. Jeśli bardzo potrzebujesz registru, albo chcesz zobaczyć, jak w LaTeXu 3 ma działać mechanizm składania
+% stron, wypróbuj pakiet xor. W takim jednak przypadku albo jesteś TeXowym guru i czytasz ten tekst tylko po to, by wyłapać w nim
+% błędy, albo jesteś odważnym poszukiwaczem przygód. Ostrzegałem!)
+%
+% Wobec powyższego robimy coś takiego: jeśli jesteśmy blisko końca strony, zaczynamy rozdział na nowej stronie; w przeciwnym przypadku,
+% kontynuujemy skłąd na dotychczasowej stronie.
+
+\newcounter{rozdz}			% Licznik rozdziałów.
+\newlength{\rozdzfil}		% Jak blisko końca strony jest już ,,blisko
+\setlength{\rozdzfil}{6cm}	% końca strony''.
+
+\newcommand{\rozdz}[1]{% Nowy rozdział. Komenda \rozdz ma jeden parametr - tytuł rozdziału.
+	\refstepcounter{rozdz}% Zwiększamy numer rozdziału o jeden i ustawiamy licznik rozdz jako ,,aktywny'' dla  najbliższego polecenia \label.
+	\par % Głupio zaczynać nowy rozdział nie zmieniając akapitu;).
+	% \vskip 0pt plus \rozdzfil\penalty -200\vskip 0pt plus -\rozdzfil% I tutaj kryje się trik. Korzystam tu
+		% z poleceń plainowych, które dają mi większą kontrolę nad tym, co się dzieje. Najpierw wstawiam pionowy
+		% odstęp długości zero, ale ,,elastyczny'' - ,,rozszerzalny'' do wartości \rozdzfil, czyli
+		% ,,wypełnienia rozdziału''. Następnie lekko zachęcam TeXa do złamania strony w tym miejscu,
+		% wstawiając niewielką ujemną ,,karę'' za złamanie tu strony (maksymalna ,,kara'' wynosi 10 000, a minimalna
+		% -10 000). Wreszcie, wstawiam znów ,,elastyczny'' odstęp pionowy, tym razem ,,rozszerzalny'', ale o
+		% wartość ujemną (!). Jak to działa? (Pomysł wziąłem z The TeXbook.) Jeśli TeX nie złamie strony w tym
+		% miejscu, oba odstępy zniosą się (zniosą się również ich ,,rozszerzalności''! i nic
+		% szczególnego się nie stanie. Jeśli zaś TeX złamie tu stronę, odstęp po miejscu jej złamania zostaje
+		% anulowany (tak działa algorytm TeXa) i ,,rozszerzalny'' odstęp wypełni dół strony poprzedzającej otwarcie rozdziału.
+	\bigskip % Duży odstęp pionowy (duży = o długość parametru \bigskipamount).
+	{\centering % Zaczynamy grupę (otwierający nawias wąsaty) i centrujemy.  Nie używam środowiska center, które
+		% wstawia sobie własne odstępy pionowe; ale żeby polecenie \centering nie obowiązywało do końca
+		% dokumentu, zamykam je w nawiasach wąsatych.
+    \large\bfseries % Skoro i tak za chwilę zamkniemy grupę, mogę zamiast \begin{large} ... \end{large} użyć po
+		% prostu \large - koniec grupy i tak anuluje zmianę wielkości czcionki (oraz odmianę grubą,
+		% wprowadzoną niskopoziomowym poleceniem \bfseries - normalnie lepiej używać \textbf{...} niż
+		% {\bfseries ...}, tutaj to nic nie psuje, choć nie jest może zbyt eleganckie).
+    Rozdział~\Roman{rozdz}\par\smallskip % Słowo ,,Rozdział'', twarda spacja (tu i tak TeX nie złamałby
+		% raczej wiersza, ale dałem tyldę z przyzwyczajenia), numer rozdziału (wielkimi cyframi rzymskimi), oraz
+		% nowy akapit i średni odstęp.
+    #1	% I wreszcie wstawiamy tytuł rozdziału, czyli pierwszy (i jedyny) parametr polecenia \rozdz.  Zwracam uwagę na to, że
+		% spacja (lub znak nowej linii) po #1 niczego nie psuje; jest tak dlatego, że generowany przez nią odstęp poziomy jest
+		% anulowany przez polecenie \par, rozpoczynające nowy akapit (czy raczej, ściśle rzecz biorąc, kończące obecny).
+		% (Taki sam efekt dałby dwukrotny znak nowego wiersza, którego zwykle używa się w tym celu.)
+	\par}\bigskip % A więc kończymy akapit (polecenie \par), grupę (nawias wąsaty) i wstawiamy mały odstęp pionowy.
+		% Uwaga! Gdyby zamienić miejscami \par i }, centrowanie tytułu rozdziału przepadłoby, ponieważ
+		% TeX używa wartości parametrów odpowiedzialnych za skład akapitu obowiązujących w momencie wywołania
+		% \par. Gdybyśmy najpierw zakończyli grupę, wrócilibyśmy do normalnego kroju pisma i
+		% wyrównywania marginesów.  Przykrym efektem ubocznym byłoby zmniejszenie odstępów między
+		% wierszami, które są zwiększane przez komendę \large.
+	\nopagebreak % Oczywiście, nie chcemy złamania strony tuż za tytułem rozdziału.
+	\addcontentsline{toc}{section}{#1}% Dodanie tytułu rozdziału do spisu treści
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcounter{dodanerozdz}[rozdz]	
+
+\newcommand{\rozdznew}[1]{% Nowy rozdział. Komenda \rozdz ma jeden parametr - tytuł rozdziału.
+	\refstepcounter{dodanerozdz}% Zwiększamy numer rozdziału o jeden i ustawiamy licznik rozdz jako ,,aktywny'' dla  najbliższego polecenia \label.
+	\par % Głupio zaczynać nowy rozdział nie zmieniając akapitu;).
+	% \vskip 0pt plus \rozdzfil\penalty -200\vskip 0pt plus -\rozdzfil% I tutaj kryje się trik. Korzystam tu
+		% z poleceń plainowych, które dają mi większą kontrolę nad tym, co się dzieje. Najpierw wstawiam pionowy
+		% odstęp długości zero, ale ,,elastyczny'' - ,,rozszerzalny'' do wartości \rozdzfil, czyli
+		% ,,wypełnienia rozdziału''. Następnie lekko zachęcam TeXa do złamania strony w tym miejscu,
+		% wstawiając niewielką ujemną ,,karę'' za złamanie tu strony (maksymalna ,,kara'' wynosi 10 000, a minimalna
+		% -10 000). Wreszcie, wstawiam znów ,,elastyczny'' odstęp pionowy, tym razem ,,rozszerzalny'', ale o
+		% wartość ujemną (!). Jak to działa? (Pomysł wziąłem z The TeXbook.) Jeśli TeX nie złamie strony w tym
+		% miejscu, oba odstępy zniosą się (zniosą się również ich ,,rozszerzalności''! i nic
+		% szczególnego się nie stanie. Jeśli zaś TeX złamie tu stronę, odstęp po miejscu jej złamania zostaje
+		% anulowany (tak działa algorytm TeXa) i ,,rozszerzalny'' odstęp wypełni dół strony poprzedzającej otwarcie rozdziału.
+	\bigskip % Duży odstęp pionowy (duży = o długość parametru \bigskipamount).
+	{\centering % Zaczynamy grupę (otwierający nawias wąsaty) i centrujemy.  Nie używam środowiska center, które
+		% wstawia sobie własne odstępy pionowe; ale żeby polecenie \centering nie obowiązywało do końca
+		% dokumentu, zamykam je w nawiasach wąsatych.
+    \large\bfseries % Skoro i tak za chwilę zamkniemy grupę, mogę zamiast \begin{large} ... \end{large} użyć po
+		% prostu \large - koniec grupy i tak anuluje zmianę wielkości czcionki (oraz odmianę grubą,
+		% wprowadzoną niskopoziomowym poleceniem \bfseries - normalnie lepiej używać \textbf{...} niż
+		% {\bfseries ...}, tutaj to nic nie psuje, choć nie jest może zbyt eleganckie).
+    Rozdział~\Roman{rozdz}\alph{dodanerozdz}\par\smallskip % Słowo ,,Rozdział'', twarda spacja (tu i tak TeX nie złamałby
+		% raczej wiersza, ale dałem tyldę z przyzwyczajenia), numer rozdziału (wielkimi cyframi rzymskimi), oraz
+		% nowy akapit i średni odstęp.
+    #1	% I wreszcie wstawiamy tytuł rozdziału, czyli pierwszy (i jedyny) parametr polecenia \rozdz.  Zwracam uwagę na to, że
+		% spacja (lub znak nowej linii) po #1 niczego nie psuje; jest tak dlatego, że generowany przez nią odstęp poziomy jest
+		% anulowany przez polecenie \par, rozpoczynające nowy akapit (czy raczej, ściśle rzecz biorąc, kończące obecny).
+		% (Taki sam efekt dałby dwukrotny znak nowego wiersza, którego zwykle używa się w tym celu.)
+	\par}\bigskip % A więc kończymy akapit (polecenie \par), grupę (nawias wąsaty) i wstawiamy mały odstęp pionowy.
+		% Uwaga! Gdyby zamienić miejscami \par i }, centrowanie tytułu rozdziału przepadłoby, ponieważ
+		% TeX używa wartości parametrów odpowiedzialnych za skład akapitu obowiązujących w momencie wywołania
+		% \par. Gdybyśmy najpierw zakończyli grupę, wrócilibyśmy do normalnego kroju pisma i
+		% wyrównywania marginesów.  Przykrym efektem ubocznym byłoby zmniejszenie odstępów między
+		% wierszami, które są zwiększane przez komendę \large.
+	\nopagebreak % Oczywiście, nie chcemy złamania strony tuż za tytułem rozdziału.
+	\addcontentsline{toc}{section}{#1}% Dodanie tytułu rozdziału do spisu treści
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Paragrafy %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcounter{paragrafy}						% § "17"    .
+\newcounter{dodaneparagrafy}[paragrafy]		% §  17 "a" .
+\newcounter{ustepy}[dodaneparagrafy]		% §  17     . "1"    .
+\newcounter{dodaneustepy}[ustepy]			% §  17     .  1 "a" .
+%\begin{enumerate}
+
+\newcommand{\parno}{%				§ 17 .
+\par\indent\textbf{\S\hspace{1.5mm}\refstepcounter{paragrafy}\arabic{paragrafy}.}
+}
+\newcommand{\parnolab}[1]{
+\par\indent\textbf{\S\hspace{1.5mm}\refstepcounter{paragrafy}\arabic{paragrafy}\label{par:#1}.}
+}
+% §~\ref{par:#1}
+
+\newcommand{\parnonew}{%			§ 17a.
+\par\indent\textbf{\S\hspace{1.5mm}\arabic{paragrafy}\refstepcounter{dodaneparagrafy}\alph{dodaneparagrafy}.}
+}
+\newcommand{\parnonewlab}[1]{
+\par\indent\textbf{\S\hspace{1.5mm}\arabic{paragrafy}\refstepcounter{dodaneparagrafy}\alph{dodaneparagrafy}\label{new:#1}.}
+}
+% §~\ref{par:#1}\ref{new:#1}
+
+
+\newcommand{\parnoust}{%			§ 18 .  1.
+\par\indent\textbf{\S\hspace{1.5mm}\refstepcounter{paragrafy}\arabic{paragrafy}.}\hspace{1.5mm}\refstepcounter{ustepy}\arabic{ustepy}.
+}
+\newcommand{\parnoustlab}[1]{
+\par\indent\textbf{\S\hspace{1.5mm}\refstepcounter{paragrafy}\arabic{paragrafy}\label{par:#1}.}\hspace{1.5mm}\refstepcounter{ustepy}\arabic{ustepy}\label{ust:#1}.
+}
+% §~\ref{par:#1} ust.~\ref{ust:#1}
+
+
+\newcommand{\parnonewust}{%			§ 18a.  1.
+\par\indent\textbf{\S\hspace{1.5mm}\arabic{paragrafy}\refstepcounter{dodaneparagrafy}\alph{dodaneparagrafy}.}\hspace{1.5mm}\refstepcounter{ustepy}\arabic{ustepy}.
+}
+\newcommand{\parnonewustlab}[1]{
+\par\indent\textbf{\S\hspace{1.5mm}\arabic{paragrafy}\refstepcounter{dodaneparagrafy}\alph{dodaneparagrafy}\label{new:#1}.}\hspace{1.5mm}
+\refstepcounter{ustepy}\arabic{ustepy}\label{ust:#1}.
+}
+% §~\ref{par:#1}\ref{new:#1} ust.~\ref{ust:#1}
+
+
+\newcommand{\ust}{%							2.
+\par\indent\refstepcounter{ustepy}\arabic{ustepy}.
+}
+\newcommand{\ustlab}[1]{
+\par\indent\refstepcounter{ustepy}\arabic{ustepy}\label{ust:#1}.
+}
+% ust.~\ref{ust:#1}
+
+
+\newcommand{\ustnew}{%							2a.
+\par\indent\arabic{ustepy}\refstepcounter{dodaneustepy}\alph{dodaneustepy}.
+}
+\newcommand{\ustnewlab}[1]{
+\par\indent\arabic{ustepy}\label{ust:#1}\refstepcounter{dodaneustepy}\alph{dodaneustepy}\label{newust:#1}.
+}
+% ust.~\ref{ust:#1}\ref{newust:#1}
+
+
+% \newcommand{\refcolor}[2]{\hypersetup{linkcolor=#1}\ref{#2}\hypersetup{linkcolor=orangelink}}
+% ust.~\refcolor{#1}{#2}
+
+% Odwoływanie się do definicji: w pkt 2 zmienia się
+% Odwoływanie się do treści Regulaminu: w § 17 ust. 2 lit. a zmienia się
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Załączniki %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcounter{zalaczniki}
+
+\newcommand{\zalacznik}[1]{
+\newpage\hfill\textbf{Załącznik~nr~\refstepcounter{zalaczniki}\arabic{zalaczniki}\label{zal:#1}}
+\addcontentsline{toc}{section}{Załącznik~nr~\arabic{zalaczniki}}
+}
+
+\hyphenation{StealthMissionTeam}
+
+% Zalącznik nr~\ref{zal:#1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TREŚĆ DOKUMENTU %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\sloppy
+\includepdf{nowaStronaTytulowa.pdf}\newpage
+
+
+		\rozdz{Definicje}
+
+\noindent Użyte w Regulaminie określenia oznaczają:
+\begin{enumerate}[label=\arabic*), ref=\arabic*, labelindent=\parindent]
+	\item Regulamin -- niniejszy dokument, dostępny w wersji elektronicznej pod adresem:\\ \url{https://bit.ly/StealthMissionTeam};
+	\end{enumerate}
+
+
+		\newpage\rozdz{Przepisy ogólne}
+		
+\parno Regulamin określa .
+\parno Niniejszy Regulamin został sporządzony w polskiej wersji językowej. Ewentualne tłumaczenie na inny język ma charakter wyłącznie informacyjny.
+
+\parnoust Każdy Użytkownik jest zobowiązany, do zapoznania się z niniejszym Regulaminem i jego akceptacji.
+	\ust W przypadku małoletnich, którzy ukończyli 13. rok życia, przyjmuje się, że działają oni za zgodą i zgodnie z decyzją ich rodziców lub prawnych opiekunów.
+	\ust W przypadku małoletnich, którzy nie ukończyli 13. roku życia, nie mogą oni korzystać z Serwera.
+
+
+		\rozdz{Przepisy i końcowe}
+
+\parno Jeżeli któryś zapis Regulaminu zostałby uznany za nieważny z powodu niezgodności z obowiązującym prawem, pozostała część pozostaje w mocy, chyba że z okoliczności wynika, iż bez postanowień dotkniętych nieważnością przepis nie zostałby wykonany.
+
+\parno Regulamin Serwera Discord Grupy StealthMissionTeam wchodzi w życie z dniem 22~marca~2022 roku.
+
+\vspace{1cm} \hfill
+	\begin{minipage}{0.5\linewidth}
+		\centering \emph{JanekR\underline{\hspace{1.2ex}}Prorok}\\\smallskip
+		Właściciel
+	\end{minipage}
+
+\newpage\tableofcontents
+\end{document}
