@@ -18,6 +18,12 @@
 \usepackage{setspace}
 		\onehalfspacing	
 		\setlength{\parindent}{20 pt}
+		
+\usepackage{etoolbox}
+	% https://ctan.org/pkg/etoolbox
+		\AtBeginEnvironment{quote}{\small}
+		\AtBeginEnvironment{quotation}{\small}
+		\AtBeginEnvironment{verse}{\small}
 
 % \usepackage{lettrine} % Pakiet umożliwiający tworzenie inicjałów na początku akapitów.
 	% \def\cslow{\raisebox{-\baselineskip}{,,}} % Zdefiniowanie cudzysłowu dla początku akapitu z inicjałem.
